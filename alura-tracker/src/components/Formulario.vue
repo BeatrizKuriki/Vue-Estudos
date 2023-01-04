@@ -6,8 +6,7 @@
 
             </div>
             <div class="column">
-                <Temporizador/>
-               
+                <Temporizador/>             
                
             </div>
         </div>
@@ -28,10 +27,5 @@ export default defineComponent({
    
 })
 
-
-
 </script>
 
-<style>
-
-</style>
