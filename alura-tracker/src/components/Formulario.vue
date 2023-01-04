@@ -37,7 +37,8 @@ export default defineComponent({
     name: 'FormularioVue',
     data (){
         return{
-            tempoEmSegundos: 0
+            tempoEmSegundos: 0,
+            cronometro:0,
         }
 
     },
@@ -46,20 +47,17 @@ export default defineComponent({
         tempoDecorrido() : string{
             return new Date(this.tempoEmSegundos * 1000).toISOString().substr(11,8)
         }
-
     },
     methods:{
         iniciar(){
-            setInterval(() =>{
+         this.cronometro = setInterval(() =>{
                 this.tempoEmSegundos += 1
-            }, 1000)
-
-            
+            }, 1000)          
 
         },
-
         finalizar(){
-            console.log('finalizando');
+            clearInterval(this.cronometro)
+            
 
         }
     }
